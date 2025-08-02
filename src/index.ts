@@ -4,6 +4,9 @@ import { BaseInteraction } from "discord.js";
 import { SlashCommandObject } from "./scripts/types/SlashCommandObject";
 import { slashCommandList } from "./commands";
 import { getSlashCommandObject } from "./utils/slash-command";
+import { rotateSoundboard } from "./actions/rotate-soundboard";
+import { config } from "./configs";
+import Cron from "./cron";
 
 dotenv.config();
 let commands: SlashCommandObject;
@@ -15,6 +18,13 @@ const client = new Client({
 client.once(Events.ClientReady, async (client) => {
 	console.log(`✅ Ready! Logged in as ${client.user?.tag}`);
 	commands = getSlashCommandObject(slashCommandList);
+    const guild = client.guilds.cache.get(config.guildId)
+    if (!guild) {
+        throw new Error("Guild not found");
+    }
+    const cron = new Cron(guild)
+    cron.init()
+	// rotateSoundboard(guild)
 });
 
 client.on("interactionCreate", async (interaction: BaseInteraction) => {

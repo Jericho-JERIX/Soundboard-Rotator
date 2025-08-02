@@ -1,8 +1,8 @@
 {
 	"dependencies": {
-		"axios": "^1.4.0",
-		"discord.js": "^14.10.2",
-		"dotenv": "^16.0.3"
+		"cron": "^4.3.3",
+		"discord.js": "^14.21.0",
+		"dotenv": "^17.2.1"
 	},
 	"name": "docket-bot",
 	"version": "1.0.0",
@@ -17,7 +17,8 @@
 		"build": "tsc",
 		"start": "node .",
 		"dev": "nodemon --config nodemon.json src/index.ts",
-        "regis": "ts-node src/scripts/register.ts"
+		"regis": "ts-node src/scripts/register.ts",
+		"profile": "ts-node src/scripts/generate-sound-profile.ts"
 	},
 	"repository": {
 		"type": "git",

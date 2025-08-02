@@ -1,0 +1,11 @@
+{
+  "soundProfiles": [
+    {
+      "name": "sample-sound",
+      "filename": "sample-sound.ogg",
+      "volume": 1.0,
+      "emoji": "🔊",
+      "isActive": true
+    }
+  ]
+}

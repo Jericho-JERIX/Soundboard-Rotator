@@ -2,3 +2,10 @@
 .vscode/
 node_modules/
 build/
+
+sounds/*.mp3
+sounds/*.ogg
+
+config.json
+sound-profile.json
+sound-profile-template.json
